@@ -2,30 +2,29 @@
 This repository contains the SLAFIT pipeline and an example dataset accompanying the manuscript.
 
 ### SLAFIT: Detection of structural variants, linkage disequilibrium estimation, and fitness inference from third generation sequencing data  
-Syed Muhammad Umer Abdullah<sup>1</sup>, Dehan Cai<sup>1</sup>, Jonathan Daniel Ip<sup>2</sup>, Kelvin Kai-Wang To<sup>2</sup>, and Yanni Sun<sup>1</sup>
+Syed Muhammad Umer Abdullah<sup>1*</sup>, Dehan Cai<sup>1</sup>, Jonathan Daniel Ip<sup>2</sup>, Kelvin Kai-Wang To<sup>2</sup>, and Yanni Sun<sup>1</sup>
 
 <sup>1</sup> Department of Electrical Engineering, City University of Hong Kong, Tat Chee Avenue, Kowloon, Hong Kong Special Administrative Region, China  
 <sup>2</sup> State Key Laboratory of Emerging Infectious Diseases, Carol Yu Centre for Infection, Department of Microbiology, Li Ka Shing Faculty of Medicine, The University of Hong Kong, 102 Pokfulam Road, Hong Kong Special
 Administrative Region, China
-<sup>*</sup> Corresponding author: E-mail: [matthew.mckay@unimelb.edu.au](mailto:matthew.mckay@unimelb.edu.au)
+<sup>*</sup> Corresponding author: E-mail: [sm.umer@my.cityu.edu.hk](mailto:sm.umer@my.cityu.edu.hk)
 
-## MPL-R pipeline
+## SLAFIT pipeline
 
 ### Dependencies
 > [samtools 1.8](https://github.com/samtools/samtools/releases/tag/1.8)  
-> [Quasirecomb](https://github.com/cbg-ethz/QuasiRecomb)  
-> [BWA-0.7.17](https://github.com/lh3/bwa/releases/tag/v0.7.17)  
+> [RVHaplo](https://github.com/dhcai21/RVHaplo)  
+> [minimap2](https://github.com/lh3/minimap2)
+> [cuteSV](https://github.com/tjiangHIT/cuteSV)
 > [MAFFT](https://mafft.cbrc.jp/alignment/software/)  
 > [Python 3.11.5](https://www.python.org/downloads/) with [pysam](https://pypi.org/project/pysam/) and [numpy](https://pypi.org/project/numpy/) libraries  
-> [MATLAB R2021b](https://www.mathworks.com/products/get-matlab.html) with [Bioinformatics toolbox](https://www.mathworks.com/products/bioinfo.html)  
-> [VarScan v2.3.9](https://sourceforge.net/projects/varscan/files/VarScan.v2.3.9.jar/download)  
 > [snakemake](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html) (Optional. Only required if running the pipeline via snakemake)
 ### Installation
 - The dependencies can be installed via the provided links.
-- The dependencies (except MATLAB) can also be installed via the following commands:
+- The dependencies (except RVHaplo) can also be installed via the following commands:
 ```console
-conda create -n mplr python==3.11.5
-conda activate mplr
+conda create -n slafit python==3.11.5
+conda activate slafit
 conda update conda
 conda update --all
 conda config --add channels bioconda
@@ -34,17 +33,16 @@ conda config --set channel_priority strict
 conda install bioconda::samtools==1.18
 conda install bioconda::pysam
 conda install conda-forge::numpy
-conda install bioconda::varscan
-conda install bioconda::quasirecomb
-conda install bioconda::bwa==0.7.17
+conda install bioconda::cutesv
+conda install bioconda::minimap2
 conda install bioconda::mafft
 conda install bioconda::snakemake
 ```
 ### Example data
 Example data is present as `data/reads.zip` and needs to be extracted into the directory `data` before running the pipeline.
 ### Running the pipeline
-- Execution privileges can be set by `chmod -R 700 paper-MPL-short-reads-master`.
-- The pipeline can be run on the example data by running the file `src/MPL-R.sh`.
+- Execution privileges can be set by `chmod -R 700 SLAFIT-master`.
+- The pipeline can be run on the example data by running the file `src/SLAFIT.sh`.
 - The pipeline can also be run via snakemake by typing `snakemake --cores n` in the main directory, where `n` is the number of available CPU cores.
 ### Output files
 - Output files generated during each step of the pipeline are stored in the directory `output`.
@@ -53,7 +51,7 @@ Example data is present as `data/reads.zip` and needs to be extracted into the d
 - Two files, `s_MPL_R_*.txt` and `s_MPL_iden_*.txt`, are generated for the selection coefficient estimates for each patient.
 - `s_MPL_R_*.txt` stores the selection coefficients estimated by considering genetic linkage, and `s_MPL_iden_*.txt` stores the selection coefficients estimated by ignoring genetic linkage.
 ### Running on user-supplied data
-- Before running the pipeline on user-supplied data, please check lines 20-34 in the file `src/MPL-R.sh` and edit the variables based on the data in use.
+- Before running the pipeline on user-supplied data, please check lines 20-34 in the file `src/SLAFIT.sh` and edit the variables based on the data in use.
 ### Operating system
 All scripts were written and tested on a Linux based Operating System
 ### Known issues and troubleshooting
@@ -69,22 +67,10 @@ This repository is dual licensed as [GPL-3.0](https://github.com/SMUAbdullah/pap
 ## Feedback and troubleshooting
 For queries or comments, please email at [umer_973@hotmail.com](mailto:umer_973@hotmail.com).
 ## Citation
-MPL-R can be cited as
-- Abdullah, S. M., Sohail, M. S., Louie, R. H., Sun, Y., Barton, J. P., & McKay, M. R. (2026). Linkage-aware inference of fitness from short-read time-series genomic data. _Virus Evolution_, **12**(1), veag027. https://doi.org/10.1093/ve/veag027
-
-Software tools used in the MPL-R pipeline can be cited as
-
-**Quasirecomb**
-- Töpfer A, Zagordi O, Prabhakaran S _et al._ Probabilistic inference of viral quasispecies subject to recombination. _J Comput Biol_ 2013;**20**:113–23. https://doi.org/10.1089/cmb.2012.0232
+Software tools used in the SLAFIT pipeline can be cited as
 
 **SAMtools**
 - Li H, Handsaker B, Wysoker A et al. The sequence alignment/map format and SAMtools. _Bioinform._ 2009;**25**:2078–9. https://doi.org/10.1093/bioinformatics/btp352
 
-**BWA**
-- Li H. Aligning sequence reads, clone sequences and assembly contigs with BWA-MEM. 2013. arXiv preprint arXiv:1303.3997
-
 **MAFFT**
 - Katoh, K., Misawa, K., Kuma, K. I., & Miyata, T. (2002). MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. _Nucleic acids research_, **30**(14), 3059-3066. https://doi.org/10.1093/nar/gkf436
-
-**VarScan**
-- Koboldt, D. C., Chen, K., Wylie, T. _et al._ (2009). VarScan: variant detection in massively parallel sequencing of individual and pooled samples. Bioinformatics, 25(17), 2283-2285. https://doi.org/10.1093/bioinformatics/btp373

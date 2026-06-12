@@ -2,12 +2,12 @@
 This repository contains the SLAFIT pipeline and an example dataset accompanying the manuscript.
 
 ### SLAFIT: Detection of structural variants, linkage disequilibrium estimation, and fitness inference from third generation sequencing data  
-Syed Muhammad Umer Abdullah<sup>1*</sup>, Dehan Cai<sup>1</sup>, Jonathan Daniel Ip<sup>2</sup>, Kelvin Kai-Wang To<sup>2</sup>, and Yanni Sun<sup>1</sup>
+Syed Muhammad Umer Abdullah<sup>1</sup>, Dehan Cai<sup>1</sup>, Jonathan Daniel Ip<sup>2</sup>, Kelvin Kai-Wang To<sup>2</sup>, and Yanni Sun<sup>1*</sup>
 
 <sup>1</sup> Department of Electrical Engineering, City University of Hong Kong, Tat Chee Avenue, Kowloon, Hong Kong Special Administrative Region, China  
 <sup>2</sup> State Key Laboratory of Emerging Infectious Diseases, Carol Yu Centre for Infection, Department of Microbiology, Li Ka Shing Faculty of Medicine, The University of Hong Kong, 102 Pokfulam Road, Hong Kong Special
 Administrative Region, China
-<sup>*</sup> Corresponding author: E-mail: [sm.umer@my.cityu.edu.hk](mailto:sm.umer@my.cityu.edu.hk)
+<sup>*</sup> Corresponding author: E-mail: [yannisun@cityu.edu.hk](mailto:yannisun@cityu.edu.hk)
 
 ## SLAFIT pipeline
 

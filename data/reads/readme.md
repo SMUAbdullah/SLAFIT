@@ -1,1 +1,1 @@
-The data for each patient should be placed in a directory named after the patient, in this case patient `10`.
+The data for each dataset should be placed in a directory named after the dataset, in this case dataset `10`.

@@ -13,13 +13,20 @@ Administrative Region, China
 ## SLAFIT pipeline
 
 ### Dependencies
-> [samtools 1.8](https://github.com/samtools/samtools/releases/tag/1.8) 
-> [RVHaplo](https://github.com/dhcai21/RVHaplo)  
+> [samtools 1.8](https://github.com/samtools/samtools/releases/tag/1.8)
+
+> [RVHaplo](https://github.com/dhcai21/RVHaplo)
+
 > [minimap2](https://github.com/lh3/minimap2)
+
 > [cuteSV](https://github.com/tjiangHIT/cuteSV)
-> [MAFFT](https://mafft.cbrc.jp/alignment/software/)  
+
+> [MAFFT](https://mafft.cbrc.jp/alignment/software/)
+
 > [Python 3.11.5](https://www.python.org/downloads/) with [pysam](https://pypi.org/project/pysam/) and [numpy](https://pypi.org/project/numpy/) libraries
+
 > [MATLAB R2021b](https://www.mathworks.com/products/get-matlab.html) with [Bioinformatics toolbox](https://www.mathworks.com/products/bioinfo.html) and [Parallel computing toolbox](https://ww2.mathworks.cn/en/products/parallel-computing.html)
+
 > [snakemake](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html) (Optional. Only required if running the pipeline via snakemake)
 ### Installation
 - The dependencies can be installed via the provided links.

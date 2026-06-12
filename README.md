@@ -17,11 +17,12 @@ Administrative Region, China
 > [minimap2](https://github.com/lh3/minimap2)
 > [cuteSV](https://github.com/tjiangHIT/cuteSV)
 > [MAFFT](https://mafft.cbrc.jp/alignment/software/)  
-> [Python 3.11.5](https://www.python.org/downloads/) with [pysam](https://pypi.org/project/pysam/) and [numpy](https://pypi.org/project/numpy/) libraries  
+> [Python 3.11.5](https://www.python.org/downloads/) with [pysam](https://pypi.org/project/pysam/) and [numpy](https://pypi.org/project/numpy/) libraries
+> [MATLAB R2021b](https://www.mathworks.com/products/get-matlab.html) with [Bioinformatics toolbox](https://www.mathworks.com/products/bioinfo.html) and [Parallel computing toolbox](https://ww2.mathworks.cn/en/products/parallel-computing.html)
 > [snakemake](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html) (Optional. Only required if running the pipeline via snakemake)
 ### Installation
 - The dependencies can be installed via the provided links.
-- The dependencies (except RVHaplo) can also be installed via the following commands:
+- The dependencies (except MATLAB and RVHaplo) can also be installed via the following commands:
 ```console
 conda create -n slafit python==3.11.5
 conda activate slafit
@@ -72,5 +73,11 @@ Software tools used in the SLAFIT pipeline can be cited as
 **SAMtools**
 - Li H, Handsaker B, Wysoker A et al. The sequence alignment/map format and SAMtools. _Bioinform._ 2009;**25**:2078–9. https://doi.org/10.1093/bioinformatics/btp352
 
+**RVHaplo**
+- Cai D., Sun Y. (2022). Reconstructing viral haplotypes using long reads. _Bioinformatics_, **38** (8), 2127–2134, https://doi.org/10.1093/bioinformatics/btac089
+
 **MAFFT**
 - Katoh, K., Misawa, K., Kuma, K. I., & Miyata, T. (2002). MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. _Nucleic acids research_, **30**(14), 3059-3066. https://doi.org/10.1093/nar/gkf436
+
+**MPL**
+- Sohail, M. S., Louie, R. H., McKay, M. R. & Barton, J. P. (2021). MPL resolves genetic linkage in fitness inference from complex evolutionary histories. _Nat. biotechnology_ **39**, 472–479. https://doi.org/10.1038/s41587-020-0737-3

@@ -72,10 +72,16 @@ For queries or comments, please email at [umer_973@hotmail.com](mailto:umer_973@
 Software tools used in the SLAFIT pipeline can be cited as
 
 **SAMtools**
-- Li H, Handsaker B, Wysoker A et al. The sequence alignment/map format and SAMtools. _Bioinform._ 2009;**25**:2078–9. https://doi.org/10.1093/bioinformatics/btp352
+- Li H, Handsaker B, Wysoker A et al. (2009). The sequence alignment/map format and SAMtools. _Bioinform._, **25**:2078–9. https://doi.org/10.1093/bioinformatics/btp352
+
+**Minimap2**
+Li, H. (2018). minimap2: pairwise alignment for nucleotide sequences. _Bioinform._, **34**(18), 3094–3100. https://doi.org/10.1093/bioinformatics/bty191
+
+**cuteSV**
+- Jiang, T., Liu, S., Cao, S. & Wang, Y. (2022). Structural variant detection from long-read sequencing data with cutesv. _Variant Calling: Methods and Protocols_, 137–151. https://doi.org/10.1007/978-1-0716-2293-3_9 
 
 **RVHaplo**
-- Cai D., Sun Y. (2022). Reconstructing viral haplotypes using long reads. _Bioinformatics_, **38** (8), 2127–2134, https://doi.org/10.1093/bioinformatics/btac089
+- Cai D., Sun Y. (2022). Reconstructing viral haplotypes using long reads. _Bioinform._, **38** (8), 2127–2134, https://doi.org/10.1093/bioinformatics/btac089
 
 **MAFFT**
 - Katoh, K., Misawa, K., Kuma, K. I., & Miyata, T. (2002). MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. _Nucleic acids research_, **30**(14), 3059-3066. https://doi.org/10.1093/nar/gkf436

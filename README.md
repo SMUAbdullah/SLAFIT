@@ -49,20 +49,8 @@ Example data is present as `data/reads.zip` and needs to be extracted into the d
 - The pipeline can also be run via snakemake by typing `snakemake --cores n` in the main directory, where `n` is the number of available CPU cores.
 ### Output files
 - Output files generated during each step of the pipeline are stored in the directory `output`.
-### Selection coefficient estimates
-- The selection coefficient estimates are stored in the directory `output/s_estimates`.
-- Two files, `s_MPL_R_*.txt` and `s_MPL_iden_*.txt`, are generated for the selection coefficient estimates for each patient.
-- `s_MPL_R_*.txt` stores the selection coefficients estimated by considering genetic linkage, and `s_MPL_iden_*.txt` stores the selection coefficients estimated by ignoring genetic linkage.
-### Running on user-supplied data
-- Before running the pipeline on user-supplied data, please check lines 20-34 in the file `src/SLAFIT.sh` and edit the variables based on the data in use.
 ### Operating system
 All scripts were written and tested on a Linux based Operating System
-### Known issues and troubleshooting
-- Newer versions of samtools may have compatibility issues with the pipeline. It is highly recommended to use the exact version specified in the section `Required software`.
-- The naming convention for the input directories is `data/reads/MSA/<patient>/<protein>`, as demonstrated in the naming of the example data. Any deviation from this might lead to errors.
-- The naming convention for the input FASTQ files is `<patient>_<protein>_t<time-point>.fq`, as demonstrated in the naming of the example data.  Any deviation from this might lead to errors.
-- The script `0_FASTQ_to_BAM.sh` creates a subdirectory `BAM` in the directory `output`. Further subdirectories are created for the dataset, patient, protein, and time-point. The final output are 3 files, `<patient>_<protein>_t<time-point>_sorted.bam`, `<patient>_<protein>_t<time-point>_sorted.bam.bai`, and `<patient>_<protein>_t<time-point>_sorted_depth.txt`, created in the subdirectory for the time-point, i.e. `output/BAM/<dataset>/<patient>/<protein>/<patient>_<protein>_t<time-point>`. If these directories or files are not created or there are incorrect file extensions, this could indicate an issue with running the script. As a first step, please double check that the naming convention is followed exactly as in the directory `data/reads` and all files have the same extensions as the example data. Afterwards, please check that the exact versions of samtools and BWA are used as mentioned in the section `Required software`. If both these checks have been performed and there are issues, feel free to report the issue via email or GitHub.
-- The script `AnalysisMPL_10.m` gives the error `'NumPat = 0. Check initialization settings and run again.` when it cannot find the FASTA files of the reconstructed sequences for any patient. This can happen if this script is run before one or more of the previous scripts has finished running or if there is an issue with the location of the files. Before running this script, please ensure that all previous scripts have finished running without errors. Please also avoid manually changing the location or name of any directory after running previous scripts, otherwise this script will return the error mentioned before.
 ## License
 This repository is dual licensed as [GPL-3.0](https://github.com/SMUAbdullah/paper-MPL-short-reads/blob/master/LICENSE-GPL) (source code) and [CC0 1.0](https://github.com/SMUAbdullah/paper-MPL-short-reads/blob/master/LICENSE-CC0) (figure and documentation).
 ## Feedback and troubleshooting

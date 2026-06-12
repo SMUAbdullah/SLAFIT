@@ -84,7 +84,7 @@ Software tools used in the SLAFIT pipeline can be cited as
 - Cai D., Sun Y. (2022). Reconstructing viral haplotypes using long reads. _Bioinform._, **38** (8), 2127–2134, https://doi.org/10.1093/bioinformatics/btac089
 
 **MAFFT**
-- Katoh, K., Misawa, K., Kuma, K. I., & Miyata, T. (2002). MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. _Nucleic acids research_, **30**(14), 3059-3066. https://doi.org/10.1093/nar/gkf436
+- Katoh, K., Misawa, K., Kuma, K. I., & Miyata, T. (2002). MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. _Nucleic Acids Res._, **30**(14), 3059-3066. https://doi.org/10.1093/nar/gkf436
 
 **MPL**
-- Sohail, M. S., Louie, R. H., McKay, M. R. & Barton, J. P. (2021). MPL resolves genetic linkage in fitness inference from complex evolutionary histories. _Nat. biotechnology_ **39**, 472–479. https://doi.org/10.1038/s41587-020-0737-3
+- Sohail, M. S., Louie, R. H., McKay, M. R. & Barton, J. P. (2021). MPL resolves genetic linkage in fitness inference from complex evolutionary histories. _Nat. Biotechnol._ **39**, 472–479. https://doi.org/10.1038/s41587-020-0737-3

@@ -1,0 +1,1 @@
+This directory contains the codes required to run the SLAFIT pipeline. The main file is `SLAFIT.sh` which is used to call all other scripts. Before running, please ensure all dependencies are added to the path. Once the code starts execution, the name of the current script being run is displayed in the terminal window.

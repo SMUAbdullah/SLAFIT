@@ -1,1 +1,1 @@
-This directory contains example data for the SLAFIT pipeline. To save space, the data is provided as a `.zip` file. Please remember to extract the compressed file before running the code.
+This directory contains example data for the SLAFIT pipeline. To save space, the data is provided as compressed files. Please remember to extract the files before running the code.

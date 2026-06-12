@@ -75,7 +75,7 @@ Software tools used in the SLAFIT pipeline can be cited as
 - Li H, Handsaker B, Wysoker A et al. (2009). The sequence alignment/map format and SAMtools. _Bioinform._, **25**:2078–9. https://doi.org/10.1093/bioinformatics/btp352
 
 **Minimap2**
-Li, H. (2018). minimap2: pairwise alignment for nucleotide sequences. _Bioinform._, **34**(18), 3094–3100. https://doi.org/10.1093/bioinformatics/bty191
+- Li, H. (2018). minimap2: pairwise alignment for nucleotide sequences. _Bioinform._, **34**(18), 3094–3100. https://doi.org/10.1093/bioinformatics/bty191
 
 **cuteSV**
 - Jiang, T., Liu, S., Cao, S. & Wang, Y. (2022). Structural variant detection from long-read sequencing data with cutesv. _Variant Calling: Methods and Protocols_, 137–151. https://doi.org/10.1007/978-1-0716-2293-3_9 

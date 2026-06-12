@@ -14,7 +14,6 @@ Administrative Region, China
 
 ### Dependencies
 > [samtools 1.8](https://github.com/samtools/samtools/releases/tag/1.8)
-
 > [RVHaplo](https://github.com/dhcai21/RVHaplo)
 
 > [minimap2](https://github.com/lh3/minimap2)

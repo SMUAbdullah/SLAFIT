@@ -39,7 +39,6 @@ conda install conda-forge::numpy
 conda install bioconda::cutesv
 conda install bioconda::minimap2
 conda install bioconda::mafft
-conda install bioconda::snakemake
 ```
 ### Example data
 Example data is present as `data/reads.zip` and needs to be extracted into the directory `data` before running the pipeline.
@@ -53,6 +52,9 @@ Example data is present as `data/reads.zip` and needs to be extracted into the d
 All scripts were written and tested on a Linux based Operating System
 ## License
 This repository is dual licensed as [GPL-3.0](https://github.com/SMUAbdullah/paper-MPL-short-reads/blob/master/LICENSE-GPL) (source code) and [CC0 1.0](https://github.com/SMUAbdullah/paper-MPL-short-reads/blob/master/LICENSE-CC0) (figure and documentation).
+## Known issues
+- Snakemake may cause issues when running inside the python==3.11.5 environment. It is recommended to install it outside the `SLAFIT` environment
+- cuteSV has a known [issue](https://github.com/tjiangHIT/cuteSV/issues/158) when running on multiple threads. To avoid this, the number of threads is forced to be 1 in the file `1_SV_detection.sh`. Users may experiment with increasing the number of threads, but if it does not work, they may revert it to 1.
 ## Feedback and troubleshooting
 For queries or comments, please email at [umer_973@hotmail.com](mailto:umer_973@hotmail.com).
 ## Citation
@@ -65,7 +67,7 @@ Software tools used in the SLAFIT pipeline can be cited as
 - Li, H. (2018). minimap2: pairwise alignment for nucleotide sequences. _Bioinform._, **34**(18), 3094–3100. https://doi.org/10.1093/bioinformatics/bty191
 
 **cuteSV**
-- Jiang, T., Liu, S., Cao, S. & Wang, Y. (2022). Structural variant detection from long-read sequencing data with cutesv. _Variant Calling: Methods and Protocols_, 137–151. https://doi.org/10.1007/978-1-0716-2293-3_9 
+- Jiang, T., Liu, S., Cao, S. & Wang, Y. (2022). Structural variant detection from long-read sequencing data with cuteSV. _Variant Calling: Methods and Protocols_, 137–151. https://doi.org/10.1007/978-1-0716-2293-3_9 
 
 **RVHaplo**
 - Cai D., Sun Y. (2022). Reconstructing viral haplotypes using long reads. _Bioinform._, **38** (8), 2127–2134, https://doi.org/10.1093/bioinformatics/btac089

@@ -26,6 +26,7 @@ Administrative Region, China
 - The dependencies can be installed via the provided links.
 - The dependencies (except MATLAB and RVHaplo) can also be installed via the following commands:
 ```console
+conda install bioconda::snakemake
 conda create -n slafit python==3.11.5
 conda activate slafit
 conda update conda

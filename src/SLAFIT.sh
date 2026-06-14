@@ -15,8 +15,7 @@ bash_scripts_dir=${main_dir}"bash_scripts/"
 numcores=8 		         # number of CPU cores to be used
 this_set="10"                    # name of the dataset. Helps in naming the files
 protein="synth"                  # name of the protein. Helps in naming the files
-#declare -a patients=("p1" "p2" ) # names of the patients
-patient="p1"
+declare -a patients=("p1" "p2" ) # names of the patients
 genome_start=1                   # starting index of genome
 genome_end=4500                  # ending index of genome
 maximum_sequence_length=10000    # maximum length of the sequence. User is welcome to adjust based on requirement
@@ -25,11 +24,10 @@ gamma=20 		         # regularization parameter
 thresh=0.10                      # threshold below which trajectories are considered noise
 rvhaplo_dir="/home/personal/software/RVHaplo-main/"
 #--------------------------------------------------------------------
-#for patient in ${patients[@]}
-#do
+for patient in ${patients[@]}
+do
 # Read alignment
 #--------------------------------------------------------------------
-:'
 cd $script_dir
 ./0_read_alignment.sh $data_dir $output_dir $this_set $patient $protein
 #--------------------------------------------------------------------
@@ -51,15 +49,49 @@ for filename in *
 do ./${filename} # an & sign can be placed after this command. It is used for running the commands in parallel. It is recommended to first test the code in serial. After testing, the code can be run in parallel. Running multiple processes in parallel without testing can lead to the creation of a number of unwanted processes which are difficult to kill, hence it is a good practice to test in serial first.
 done
 #--------------------------------------------------------------------
+done
 # Reconstructed haplotype alignment
 #--------------------------------------------------------------------
 cd $script_dir
 ./3_recons_align.sh $data_dir $output_dir $this_set $patient $protein $numcores
-'
 #--------------------------------------------------------------------
 # Generate files to perform haplotype reconstruction
 #--------------------------------------------------------------------
 cd $script_dir
 python 4_convert_format.py $output_dir $this_set $patient $protein
+#--------------------------------------------------------------------
+# Preprocess the reconstructed files for analysis
+#--------------------------------------------------------------------
+cd $script_dir
+matlab -nodisplay -nojvm -nosplash -nodesktop -r "QR_pipeline_func_0_3(\"${data_dir}\",\"${this_set}\",\"${protein}\",\"${bsample_size_percentage}\",\"${maximum_sequence_length}\",\"${maximum_time_points}\",\"${first_bsample}\",\"${num_bsample}\",\"${output_dir}\",\"${bash_scripts_dir}\"); exit";
+
+cd $bash_scripts_dir"alignment_script_main_call/${this_set}/consensi_alignment"
+for filename in *
+do ./${filename}
+done
+
+cd $script_dir
+matlab -nodisplay -nojvm -nosplash -nodesktop -r "QR_pipeline_func_1_4(\"${data_dir}\",\"${this_set}\",\"${protein}\",\"${bsample_size_percentage}\",\"${maximum_sequence_length}\",\"${maximum_time_points}\",\"${first_bsample}\",\"${num_bsample}\",\"${output_dir}\",\"${bash_scripts_dir}\"); exit";
+
+cd $bash_scripts_dir"alignment_script_main_call/${this_set}/alignment"
+for filename in *
+do ./${filename}
+done
+
+cd $script_dir
+matlab -nodisplay -nojvm -nosplash -nodesktop -r "QR_pipeline_func_2_5(\"${data_dir}\",\"${this_set}\",\"${protein}\",\"${bsample_size_percentage}\",\"${maximum_sequence_length}\",\"${maximum_time_points}\",\"${first_bsample}\",\"${num_bsample}\",\"${output_dir}\",\"${bash_scripts_dir}\"); exit";
+#--------------------------------------------------------------------
+# Obtain single mutant allele frequency trajectories
+#--------------------------------------------------------------------
+for patient in ${patients[@]}
+do
+cd $script_dir
+./6_mut_aft.sh $data_dir $output_dir $this_set $patient $protein
+done
+#--------------------------------------------------------------------
+# Linkage disequilibrium and fitness estimation
+#--------------------------------------------------------------------
+cd $script_dir
+matlab -nodisplay -nojvm -nosplash -nodesktop -r "MPL_7(\"${main_dir}\",\"${data_dir}\",\"${this_set}\",\"${protein}\",\"${bsample_size_percentage}\",\"${num_bsample}\",\"${output_dir}\",\"${genome_start}\",\"${genome_end}\",\"${gamma}\",\"${thresh}\"); exit";
 #--------------------------------------------------------------------
 exit 0

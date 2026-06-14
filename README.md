@@ -41,7 +41,7 @@ conda install bioconda::cutesv
 conda install bioconda::minimap2
 conda install bioconda::mafft
 ```
-- After installing RVHaplo, please replace the `src` directory with the supplied directory `src\RVHaplo\src`. RVHaplo originally does not work on Python 3.11.5 and the files in the supplied directory have been modified and tested to work on Python 3.11.5.
+- After installing RVHaplo, please replace the copy the files supplied in the directory `src\RVHaplo` into the respective directories of the local installation. RVHaplo originally does not work on Python 3.11.5 and the files in the supplied directory have been modified and tested to work on Python 3.11.5.
 ### Example data
 Example data is present as `data/reads`. The individual `.fastq` files need to be extracted into the same directory these are present in before running the pipeline.
 ### Running the pipeline

@@ -41,6 +41,7 @@ conda install bioconda::cutesv
 conda install bioconda::minimap2
 conda install bioconda::mafft
 ```
+- After installing RVHaplo, please replace the `src` directory with the supplied directory `src\RVHaplo\src`. RVHaplo originally does not work on Python 3.11.5 and the files in the supplied directory have been modified and tested to work on Python 3.11.5.
 ### Example data
 Example data is present as `data/reads.zip` and needs to be extracted into the directory `data` before running the pipeline.
 ### Running the pipeline
@@ -52,7 +53,6 @@ Example data is present as `data/reads.zip` and needs to be extracted into the d
 ### Operating system
 All scripts were written and tested on a Linux based Operating System
 ### Known issues and troubleshooting
-- Please replace the `src` directory in RVHaplo with the supplied directory `RVHaplo\src`. Files in the supplied directory have been modified and tested to work on Python 3.11.5.
 - Snakemake may cause issues when running inside the python==3.11.5 environment. It is recommended to install it outside the `SLAFIT` environment
 - cuteSV has a known [issue](https://github.com/tjiangHIT/cuteSV/issues/158) when running on multiple threads. To avoid this, the number of threads is forced to be 1 in the file `1_SV_detection.sh`. Users may experiment with increasing the number of threads, but if it does not work, they may revert it to 1.
 ## License

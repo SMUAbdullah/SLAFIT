@@ -53,8 +53,8 @@ Example data is present as `data/reads`. The individual `.fastq` files need to b
 ### Operating system
 All scripts were written and tested on a Linux based Operating System
 ### Known issues and troubleshooting
-- Snakemake may cause issues when running inside the python==3.11.5 environment. It is recommended to install it outside the `SLAFIT` environment
 - cuteSV has a known [issue](https://github.com/tjiangHIT/cuteSV/issues/158) when running on multiple threads. To avoid this, the number of threads is forced to be 1 in the file `1_SV_detection.sh`. Users may experiment with increasing the number of threads, but if it does not work, they may revert it to 1.
+- Snakemake may cause issues when running inside the python==3.11.5 environment. It is recommended to install it outside the `SLAFIT` environment
 ## License
 This repository is dual licensed as [GPL-3.0](https://github.com/SMUAbdullah/paper-MPL-short-reads/blob/master/LICENSE-GPL) (source code) and [CC0 1.0](https://github.com/SMUAbdullah/paper-MPL-short-reads/blob/master/LICENSE-CC0) (figure and documentation).
 ## Feedback and troubleshooting

@@ -43,7 +43,7 @@ conda install bioconda::mafft
 ```
 - After installing RVHaplo, please replace the `src` directory with the supplied directory `src\RVHaplo\src`. RVHaplo originally does not work on Python 3.11.5 and the files in the supplied directory have been modified and tested to work on Python 3.11.5.
 ### Example data
-Example data is present as `data/reads.zip` and needs to be extracted into the directory `data` before running the pipeline.
+Example data is present as `data/reads`. The individual `.fastq` files need to be extracted into the same directory these are present in before running the pipeline.
 ### Running the pipeline
 - Execution privileges can be set by `chmod -R 700 SLAFIT-master`.
 - The pipeline can be run on the example data by running the file `src/SLAFIT.sh`.

@@ -12,21 +12,20 @@ bash_scripts_dir=${main_dir}"bash_scripts/"
 #--------------------------------------------------------------------
 # Variable declarations, please edit based on data
 #--------------------------------------------------------------------
-numcores=8 		                 # number of CPU cores to be used
+numcores=8 		                   # number of CPU cores to be used
 this_set="10"                    # name of the dataset. Helps in naming the files
 protein="synth"                  # name of the protein. Helps in naming the files
-#declare -a patients=("p1" "p2" ) # names of the patients
-patient="p1"
+declare -a patients=("p1" "p2" ) # names of the patients
 genome_start=1                   # starting index of genome
 genome_end=4500                  # ending index of genome
 maximum_sequence_length=10000    # maximum length of the sequence. User is welcome to adjust based on requirement
 maximum_time_points=40 	         # maximum number of time points. User is welcome to adjust based on requirement
-gamma=20 		                 # regularization parameter
+gamma=20 		                     # regularization parameter
 thresh=0.10                      # threshold below which trajectories are considered noise
-rvhaplo_dir="/home/personal/software/RVHaplo-main/"
+rvhaplo_dir=""                   # location of the RVHaplo-main directory, such as /home/software/RVHaplo-main/
 #--------------------------------------------------------------------
-#for patient in ${patients[@]}
-#do
+for patient in ${patients[@]}
+do
 # Read alignment
 #--------------------------------------------------------------------
 cd $script_dir
@@ -60,6 +59,7 @@ cd $script_dir
 cd $script_dir
 python 4_convert_format.py $output_dir $this_set $patient $protein
 #--------------------------------------------------------------------
+done
 # Linkage disequilibrium and fitness estimation
 #--------------------------------------------------------------------
 cd $script_dir

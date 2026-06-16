@@ -46,10 +46,16 @@ conda install bioconda::mafft
 Example data is present as `data/reads`. The individual `.fastq` files need to be extracted into the same directory these are present in before running the pipeline.
 ### Running the pipeline
 - Execution privileges can be set by `chmod -R 700 SLAFIT-master`.
+- Prior to running, please specify the location of the `RVHaplo-master` directory by editing line 25 of the file `src/SLAFIT.sh`.
 - The pipeline can be run on the example data by running the file `src/SLAFIT.sh`.
 - The pipeline can also be run via snakemake by typing `snakemake --cores n` in the main directory, where `n` is the number of available CPU cores.
 ### Output files
 - Output files generated during each step of the pipeline are stored in the directory `output`.
+- Detected structural variants are stored in the directory `output/SV`.
+- Single nucleotide variants at each locus are stored in the directory `output/SNV`.
+- Selection coefficient estimates are stored in the directory `output/s_estimates`. `s_LD_<patient>.txt` stores the selection coefficients estimated by considering genetic linkage, and `s_LD_independent_<patient>.txt` stores the selection coefficients estimated by ignoring genetic linkage.
+### Running on user-supplied data
+- Before running the pipeline on user-supplied data, please check lines 15-24 in the file `src/SLAFIT.sh` and edit the variables based on the data in use.
 ### Operating system
 All scripts were written and tested on a Linux based Operating System
 ### Known issues and troubleshooting

@@ -41,12 +41,12 @@ conda install bioconda::cutesv
 conda install bioconda::minimap2
 conda install bioconda::mafft
 ```
-- After installing RVHaplo, please replace the copy the files supplied in the directory `src\RVHaplo` into the respective directories of the local installation. RVHaplo originally does not work on Python 3.11.5 and the files in the supplied directory have been modified and tested to work on Python 3.11.5.
+- RVHaplo can be installed from its [GitHub repository](https://github.com/dhcai21/RVHaplo). After installation, please copy the files supplied in the directory `src\RVHaplo` of SLAFIT into the respective directories of the local installation of RVHaplo. RVHaplo originally does not work on Python 3.11.5 and the files in the directory supplied with SLAFIT have been modified and tested to work on Python 3.11.5.
 ### Example data
 Example data is present as `data/reads`. The individual `.fastq` files need to be extracted into the same directory these are present in before running the pipeline.
 ### Running the pipeline
 - Execution privileges can be set by `chmod -R 700 SLAFIT-master`.
-- Prior to running, please specify the location of the `RVHaplo-master` directory by editing line 25 of the file `src/SLAFIT.sh`.
+- Prior to running, please specify the location of the `RVHaplo-master` directory by editing line 25 of the file `src/SLAFIT.sh`. Please also specify the number of available central processing unit (CPU) cores by editing line 15 of the file `src/SLAFIT.sh`.
 - The pipeline can be run on the example data by running the file `src/SLAFIT.sh`.
 - The pipeline can also be run via snakemake by typing `snakemake --cores n` in the main directory, where `n` is the number of available CPU cores.
 ### Output files

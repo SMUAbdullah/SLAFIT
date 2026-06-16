@@ -85,3 +85,4 @@ Software tools used in the SLAFIT pipeline can be cited as
 
 **MPL**
 - Sohail, M. S., Louie, R. H., McKay, M. R. & Barton, J. P. (2021). MPL resolves genetic linkage in fitness inference from complex evolutionary histories. _Nat. Biotechnol._ **39**, 472–479. https://doi.org/10.1038/s41587-020-0737-3
+- Sohail, M. S., Louie, R. H., Hong, Z. et al. (2022) Inferring epistasis from genetic time-series data. _Mol. Biol. Evol._ **39**, msac199. https://doi.org/10.1093/molbev/msac199

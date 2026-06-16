@@ -28,7 +28,7 @@ FLAG_useFreqEntry = true;
 FLAG_troubleShoot = false; % SET: saves SelEstNoMu and SelEstSLNoMu
 FLAG_Epi = false; % SET: use MPL with epistasis, UNSET: MPL with epistasis not used
 
-textCell{1} = ['dirNamesSet' num2str(thisSet) '_'];
+textCell{1} = ['dirNamesSet' thisSet '_'];
 %--------------------------------------------------------------------------
 
 % ------------------------- AUTO INITIALIZATION ---------------------------

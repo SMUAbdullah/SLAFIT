@@ -11,7 +11,7 @@ numNT = 5; % specify the number of NT that 'can' occur in the provided fasta fil
 FLAG_useFreqEntry = true; % use the freq: entry from header to find frequency
 FLAG_Epi = false; % SET: make mutVecs for MPL Epi, unset otherwise
 FLAGS_preProc_Steps_2_3_4=[FLAG_binaryApprox,FLAG_SaveFile,FLAG_Epi,FLAG_AssignSynNonSyn];
-textCell{1} = ['dirNamesSet' num2str(thisSet) '_' ];
+textCell{1} = ['dirNamesSet' thisSet '_' ];
 %--------------------------------------------------------------------------
 
 

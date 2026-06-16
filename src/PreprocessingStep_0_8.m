@@ -5,21 +5,19 @@
 %        Data dir:  /.../dir1/[Patient_ID]/[Protein_name]/[FileNames].fasta
 %        Analysis Dir should be different from data directiry
 
-% addpath(genpath('/local1/staff/ee/smuabdullah/Time_Series/04.01_Jan/23-Jan-19'));
-
 %-------------------- USER CONTROLLED INITIALIZATION ----------------------
 FLAG_SaveFile = 1;
 
 % These variables need to be set for given dataset
 
-dataDirNameMain = [pathdirw0 'final_folder/' thisSet '/' thisSet '_M' num2str(num_bsample) '/'];
-analysisDirNameMain = [pathdirw0 'Sim_Analysis/' thisSet '/' thisSet '_M' num2str(num_bsample) '/'];
+dataDirNameMain = [pathdirw0 'MPL_format/' thisSet '/'];
+analysisDirNameMain = [pathdirw0 'Sim_Analysis/' thisSet '/'];
 
 if(exist(analysisDirNameMain, 'dir') == 0)
     mkdir(analysisDirNameMain)
 end
 
-str1 = ['dirNamesSet' thisSet '_ss' num2str(factor) '_M' num2str(num_bsample) '_'];
+str1 = ['dirNamesSet' thisSet '_'];
 %--------------------------------------------------------------------------
 
 % ------------------------- AUTO INITIALIZATION ---------------------------

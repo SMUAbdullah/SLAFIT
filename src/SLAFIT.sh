@@ -12,7 +12,7 @@ bash_scripts_dir=${main_dir}"bash_scripts/"
 #--------------------------------------------------------------------
 # Variable declarations, please edit based on data
 #--------------------------------------------------------------------
-numcores=8 		                   # number of CPU cores to be used
+numcores=8 		                # number of CPU cores to be used
 this_set="10"                    # name of the dataset. Helps in naming the files
 protein="synth"                  # name of the protein. Helps in naming the files
 declare -a patients=("p1" "p2" ) # names of the patients

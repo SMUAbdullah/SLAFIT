@@ -15,7 +15,7 @@ for filename in *
 do cd "${pat_dir}${filename}"
 
 samtools mpileup -f "${ref_dir}${patient}_${protein}_ref.fa" "${filename}_sorted.bam" > "${filename}.mpileup"
-varscan readcounts "${filename}.mpileup" --output-file "${filename}_SNP.txt" --min-base-qual 30
+varscan readcounts "${filename}.mpileup" --output-file "${filename}_SNP.txt" --min-base-qual 20
 
 done
 

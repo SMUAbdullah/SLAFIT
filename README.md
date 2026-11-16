@@ -66,8 +66,8 @@ This repository is dual licensed as [GPL-3.0](https://github.com/SMUAbdullah/SLA
 ## Feedback and troubleshooting
 For queries or comments, please email at [umer_973@hotmail.com](mailto:umer_973@hotmail.com).
 ## Citation
-MPL-R can be cited as
-- Abdullah, S. M. U., Sohail, M. S., Louie, R. H., Sun, Y., Barton, J. P., & McKay, M. R. (2026). Linkage-aware inference of fitness from short-read time-series genomic data. _Virus Evolution_, **12**(1), veag027. https://doi.org/10.1093/ve/veag027
+SLAFIT can be cited as
+- Abdullah, S. M. U., Cai, D., Ip, J. D., To, K. K. W., and Sun, Y. (2026). SLAFIT: Viral fitness inference and structural variant detection from TGS data. _biorxiv_. https://doi.org/10.64898/2026.10.11.758307
 
 Software tools used in the SLAFIT pipeline can be cited as
 
